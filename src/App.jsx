@@ -1,34 +1,34 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { MdLightMode } from 'react-icons/md'
+import { FaMoon } from 'react-icons/fa'
+import { TodoForm } from './components/TodoForm/TodoForm'
 import './App.css'
 
+
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const handleDarkMode = () => {
+    setIsDarkMode(prev => !prev)
+  }
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className={`${isDarkMode ? 'main-bg-dark' : 'main-bg-light'}`}>
+      <div className={`${isDarkMode ? 'dark-mode' : 'page-bg'}`}>
+        <div className='heading-flex'>
+          <h1 className='heading-title'>TODO </h1>
+          <span className='light-icon' onClick={handleDarkMode}>
+            {
+              isDarkMode ? < MdLightMode size={30} style={{ color: '#fff' }} /> : <FaMoon style={{ color: 'grey', fontSize: '20px' }} />
+            }
+          </span>
+
+        </div>
+        < TodoForm />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
+
   )
 }
 
