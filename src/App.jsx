@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { MdLightMode } from 'react-icons/md'
 import { FaMoon } from 'react-icons/fa'
-import { TodoForm } from './components/TodoForm/TodoForm'
+import { CreateTodo  } from './components/CreateTodo/CreateTodo'
 import './App.css'
 
 
@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className={`${isDarkMode ? 'main-bg-dark' : 'main-bg-light'}`}>
-      <div className={`${isDarkMode ? 'dark-mode' : 'page-bg'}`}>
+      <div className={`${isDarkMode ? 'dark-mode' : 'page-bg'} app-wrapper`}>
         <div className='heading-flex'>
           <h1 className='heading-title'>TODO </h1>
           <span className='light-icon' onClick={handleDarkMode}>
@@ -25,7 +25,7 @@ function App() {
           </span>
 
         </div>
-        < TodoForm />
+        <CreateTodo />
       </div>
     </div>
 
