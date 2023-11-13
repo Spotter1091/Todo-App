@@ -25,7 +25,7 @@ function App() {
           </span>
 
         </div>
-        <CreateTodo />
+        <CreateTodo isDarkMode={isDarkMode} />
       </div>
     </div>
 

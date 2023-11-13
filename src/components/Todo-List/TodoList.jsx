@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { TodoItem } from '../TodoItems/TodoItem';
+import './TodoList.css'
 
-export const TodoList = () => {
+export const TodoList = ({ todoItems, editAction, isDarkMode }) => {
+
   return (
-    <div>TodoList</div>
+    <div className='todo-list'>
+      {todoItems.map(item => <TodoItem key={item.id} editAction={editAction} todoItem={item} isDarkMode={isDarkMode} />)}
+    </div>
+
   )
 }

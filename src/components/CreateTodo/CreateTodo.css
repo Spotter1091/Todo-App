@@ -1,21 +1,27 @@
 .input-container {
-  margin-top: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
-  background-color: #25273c;
+  background-color: white;
   padding: 10px;
   border-radius: 5px;
 }
 
+.dark-mode-input, .dark-mode-input input{
+  background:#25273c ;
+  color: white;
+}
+
+
 .todo-input {
   width: 100%;
-  background-color: #25273c;
-
+  background-color: white;
   border: none;
   outline: none;
   height: 2.3rem;
   position: relative;
-  color: rgb(241, 232, 232);
+  color: rgb(20, 18, 18);
 }
 
 .todo-input::placeholder {

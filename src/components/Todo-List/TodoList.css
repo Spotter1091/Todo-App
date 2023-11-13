@@ -1,1 +1,12 @@
 
+
+
+.todo-list > div:first-of-type{
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.todo-list > div:last-of-type {
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}

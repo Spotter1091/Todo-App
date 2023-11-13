@@ -3,7 +3,7 @@
   background-repeat: no-repeat;
   background-position: initial;
   background-size: cover;
-  height: 258px;
+  height: 209px;
 }
 
 .heading-flex {
@@ -22,7 +22,7 @@
 }
 
 .light-icon {
-  color: white;
+  color: #f9f9f9;
 }
 
 .dark-mode {
@@ -30,7 +30,7 @@
    background-repeat: no-repeat;
   background-position: initial;
   background-size: cover;
-  height: 258px;
+  height: 209px;
    /* max-width: 425px;  */
   background-color: #171723;
 }

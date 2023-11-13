@@ -1,0 +1,51 @@
+
+.todo-item-input {
+  width: 93%;
+  background-color: #ffffff;
+  border: none;
+  outline: none;
+  height: 100%;
+  position: relative;
+  color: rgb(20, 18, 18);
+  padding: 14px;
+  border: 1px solid #e6e5ea;
+  font-size: 1rem;
+}
+
+
+.todo-item-input::placeholder {
+    font-size: 11px;
+  padding-left: 1.5rem;
+  color: #595b70;
+
+}
+
+.todo-output {
+  background-color: white;
+  padding: 14px;
+  border-bottom: 1px solid #e6e5ea;
+}
+
+.dark-mode-input {
+  background:#25273c;
+  color: white;
+  border-color: #37394e;
+}
+
+.todo-item-btn::placeholder {
+  font-size: 10px;
+  padding-left: 1.5rem;
+  color: #595b70;
+}
+
+.todo-item {
+    height: 52px;
+    background:#25273c;
+    overflow: hidden;
+}
+
+.edit-btn {
+    display: ;
+ padding-top: 2px;
+
+}

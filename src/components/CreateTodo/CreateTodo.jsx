@@ -2,22 +2,24 @@ import React, { useState } from 'react'
 import { v4 as uuidv4 } from "uuid";
 import { HiDownload } from 'react-icons/hi'
 import './CreateTodo.css'
+import { TodoList } from '../Todo-List/TodoList';
 
 
 
-export const  CreateTodo = () => {
+
+export const  CreateTodo = ({isDarkMode}) => {
   const [userInput, setUserInput] = useState('')
-  const [todos, setTodos] = useState([])
-  const [buttonColor, setButtonColor] = useState('#595b70')
+  const [todos, setTodos] = useState([]);
+  const [buttonColor, setButtonColor] = useState('black')
 
 
 
   const handleChange = (e) => {
     setUserInput(e.target.value)
     if (e.target.value.length > 0) {
-      setButtonColor('white'); 
+      setButtonColor('#595b70'); 
     } else {
-      setButtonColor('#595b70');
+      setButtonColor('black');
     }
   }
 
@@ -33,12 +35,38 @@ export const  CreateTodo = () => {
     setUserInput('')
   }
 
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleAddTodo();
+    }
+  };
+
+  const editAction = (id, isEditing, title) => {
+    const newTodo = todos.map((todo) => {
+      if(todo.id === id){
+        return {
+          ...todo,
+          title,
+          isEditing
+        }
+      }
+      return todo
+    })
+
+    setTodos(newTodo)
+  }
+
+
+
   return (
-    <div className='input-container'>
+    <>
+    <div className={`input-container ${isDarkMode && 'dark-mode-input'}`} >
       <button onClick={handleAddTodo} className='download-btn' style={{
           color: buttonColor}} >
         <HiDownload className='download-icon'/></button>
-      <input type="text" value={userInput}  onChange={handleChange} className='todo-input' placeholder='Create a new todo...' />
+        <input type="text" value={userInput} onChange={handleChange} onKeyDown={handleKeyPress} className='todo-input' placeholder='Create a new todo...' />
     </div>
+      <TodoList todoItems={todos} editAction={editAction} isDarkMode={isDarkMode}/>
+    </>
   )
 }
