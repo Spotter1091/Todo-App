@@ -23,9 +23,10 @@ function App() {
               isDarkMode ? < MdLightMode size={30} style={{ color: '#fff' }} /> : <FaMoon style={{ color: 'grey', fontSize: '20px' }} />
             }
           </span>
-
         </div>
         <CreateTodo isDarkMode={isDarkMode} />
+        <div>
+        </div>
       </div>
     </div>
 

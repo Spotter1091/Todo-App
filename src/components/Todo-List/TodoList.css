@@ -1,4 +1,7 @@
-
+.todo-list {
+  max-height: 400px;
+  overflow-y: scroll;
+}
 
 
 .todo-list > div:first-of-type{
@@ -9,4 +12,11 @@
 .todo-list > div:last-of-type {
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
+}
+
+.text-flex {
+  display: flex;
+  justify-content: space-between;
+  color: #8f8e94;
+  padding: 1.3rem;
 }

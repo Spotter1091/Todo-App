@@ -23,6 +23,22 @@ export const  CreateTodo = ({isDarkMode}) => {
     }
   }
 
+  const toggleComplete = (id) => {
+    const updatedTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, isComplete: !todo.isComplete } : todo
+    );
+
+    setTodos(updatedTodos);
+  };
+
+
+
+  const deleteTodo = (id) => {
+    console.log(id);
+    const newTodoList = todos.filter((todo) => todo.id !== id);
+    setTodos(newTodoList);
+  };
+
   const handleAddTodo = () => {
     const todo = {
       id: uuidv4(),
@@ -60,13 +76,36 @@ export const  CreateTodo = ({isDarkMode}) => {
 
   return (
     <>
-    <div className={`input-container ${isDarkMode && 'dark-mode-input'}`} >
-      <button onClick={handleAddTodo} className='download-btn' style={{
-          color: buttonColor}} >
-        <HiDownload className='download-icon'/></button>
-        <input type="text" value={userInput} onChange={handleChange} onKeyDown={handleKeyPress} className='todo-input' placeholder='Create a new todo...' />
-    </div>
-      <TodoList todoItems={todos} editAction={editAction} isDarkMode={isDarkMode}/>
+      <div className={`input-container ${isDarkMode && "dark-mode-input"}`}>
+        <button
+          onClick={handleAddTodo}
+          className="download-btn"
+          style={{
+            color: buttonColor,
+          }}
+        >
+          <HiDownload className="download-icon" />
+        </button>
+        <input
+          type="text"
+          value={userInput}
+          onChange={handleChange}
+          onKeyDown={handleKeyPress}
+          className="todo-input"
+          placeholder="Create a new todo..."
+        />
+      </div>
+      <TodoList
+        todoItems={todos}
+        editAction={editAction}
+        isDarkMode={isDarkMode}
+        deleteTodo={deleteTodo}
+        toggleComplete={toggleComplete}
+      />
+      <div className='task-status'>
+        
+
+      </div>
     </>
-  )
+  );
 }

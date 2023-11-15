@@ -1,3 +1,8 @@
+.todo-item {
+  height: 52px;
+  background: #25273c;
+  overflow: hidden;
+}
 
 .todo-item-input {
   width: 93%;
@@ -12,12 +17,10 @@
   font-size: 1rem;
 }
 
-
 .todo-item-input::placeholder {
-    font-size: 11px;
+  font-size: 11px;
   padding-left: 1.5rem;
   color: #595b70;
-
 }
 
 .todo-output {
@@ -27,8 +30,12 @@
 }
 
 .dark-mode-input {
-  background:#25273c;
+  background: #25273c;
   color: white;
+  border-color: #37394e;
+}
+
+.dark-mode-input input {
   border-color: #37394e;
 }
 
@@ -38,14 +45,62 @@
   color: #595b70;
 }
 
-.todo-item {
-    height: 52px;
-    background:#25273c;
-    overflow: hidden;
+.edit-btn {
+  border: none;
+  height: 53px;
+  width: 1.42rem;
 }
 
-.edit-btn {
-    display: ;
- padding-top: 2px;
+.todo-output button {
+  border: none;
+  background: transparent;
+}
 
+.icon-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.completed-icon {
+  width: 20px;
+  height: 20px;
+  color: #595b70;
+  margin-right: 2rem;
+}
+
+.delete-icon {
+  width: 39px;
+  height: 18px;
+}
+
+.delete-icon:hover {
+  color: #c5aeff;
+  cursor: pointer;
+}
+
+.left-btn {
+  display: flex;
+}
+
+.check-mark-wrapper {
+  border: 1px solid rgb(23, 23, 23);
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  align-items: center;
+  background-color: #0073cf;
+  margin-right: 2rem;
+}
+
+.check-mark {
+  width: 25px;
+  height: 24px;
+  color: #eae7f2;
+}
+
+.completed {
+  color: #c5aeff;
+  text-decoration: line-through;
 }
