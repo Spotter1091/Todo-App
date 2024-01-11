@@ -2,7 +2,18 @@ import React, { useState } from 'react'
 import { TodoItem } from '../TodoItems/TodoItem';
 import './TodoList.css'
 
-export const TodoList = ({ todoItems, editAction, isDarkMode, deleteTodo, toggleComplete }) => {
+export const TodoList = ({
+  todoItems,
+  editAction,
+  isDarkMode,
+  deleteTodo,
+  toggleComplete,
+  removeCompletedTask,
+}) => {
+  const activeLength = todoItems?.filter(
+    (item) => item.isComplete === false
+  ).length;
+
   return (
     <div className="todo-list">
       {todoItems.map((item) => (
@@ -15,8 +26,13 @@ export const TodoList = ({ todoItems, editAction, isDarkMode, deleteTodo, toggle
           toggleComplete={toggleComplete}
         />
       ))}
-      <p className='todo-output text-flex'>
-        5 items left  <span>Clear completed</span>
+      <p
+        className={`todo-output text-flex border-bottom ${
+          isDarkMode && "dark-mode-status"
+        }`}
+      >
+        {activeLength} items left{" "}
+        <button onClick={removeCompletedTask}> Clear completed</button>
       </p>
     </div>
   );

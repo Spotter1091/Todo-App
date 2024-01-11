@@ -46,3 +46,38 @@
 .download-btn:hover {
   cursor: pointer;
 }
+
+.task-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e6e5ea;
+  margin-top: 2rem;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 15px;
+  background-color: #ffffff ;
+  
+
+}
+
+.dark-mode-status {
+  background-color: #25273c ; 
+  border: none;
+}
+
+.task-status button {
+  color: #8f8e94;
+  padding: 10px;
+  font-weight: 600;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+}
+
+.task-status button.active {
+  color: #0073cf;
+
+}

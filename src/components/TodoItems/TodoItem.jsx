@@ -6,15 +6,14 @@ import { MdRadioButtonUnchecked } from "react-icons/md";
 import "./TodoItem.css";
 
 export const TodoItem = ({ todoItem, editAction, isDarkMode, deleteTodo, toggleComplete }) => {
-  const [todoTitle, setTodoTitle] = useState(todoItem.title ?? "");
+  const [todoTitle, setTodoTitle] = useState(todoItem?.title ?? "");
 
-  const [isCheckMark, setIsCheckMark] = useState(false);
+  const [isCheckMark, setIsCheckMark] = useState(todoItem?.isComplete);
 
   const handleChange = (event) => {
     const { value } = event.target;
     setTodoTitle(value);
   };
-  console.log("isDarkMode", isDarkMode);
 
   const handleCheckMark = () => {
     setIsCheckMark((prev) => !prev);
